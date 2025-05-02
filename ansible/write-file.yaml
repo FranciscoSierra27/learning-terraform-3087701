@@ -1,0 +1,9 @@
+---
+- name: Write a simple file
+  hosts: ubuntu-ec2
+  gather_facts: false
+  task:
+    - name: Write a test file to the tmp directory
+      ansible.builtin.lineinfile:
+        path: /tmp/test.txt
+        line: This is a simple test
